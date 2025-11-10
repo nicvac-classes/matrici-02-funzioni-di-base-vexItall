@@ -8,12 +8,16 @@ class Esercizio {
 
     public static Scanner in = new Scanner( System.in );
 
-    public static void assegnaMatrice( /*scrivere qui i parametri richiesti dall'esercizio*/ ) {
-        // SCRIVERE QUI IL CODICE RICHIESTO DALL'ESERCIZIO
+    public static void assegnaMatrice(int[][] M, int nR, int nC, int v) {
+        for(int i = 0; i < nR; ++i){
+            for(int j = 0; j < nC; ++j){
+                M[i][j] = v;
+            }
+        }
     }
 
-    public static void azzeraMatrice( /*scrivere qui i parametri richiesti dall'esercizio*/ ) {
-        //SCRIVERE QUI IL CODICE RICHIESTO DALL'ESERCIZIO
+    public static void azzeraMatrice(int[][] M, int nR, int nC) {
+        assegnaMatrice(M, nR, nC, 0);
     }
 
     public static void riempiCasuale( /*scrivere qui i parametri richiesti dall'esercizio*/ ) {
@@ -22,7 +26,30 @@ class Esercizio {
     }
 
     public static void main(String args[]) {
-        //SCRIVERE QUI IL CODICE RICHIESTO DALL'ESERCIZIO  
+
+        System.out.println("---------------------------------------Esercizio1---------------------------------------");
+
+        int[][] M = new int[3][5];
+        int nR = 3; 
+        int nC = 5;
+
+        int num;
+
+        System.out.print("Inserire valore da inserire nella matrice: ");
+        num = Integer.parseInt(in.nextLine());
+
+        assegnaMatrice(M, nR, nC, num);
+        UtilsMatrice.visualizza(M);
+
+        System.out.println("---------------------------------------Esercizio2---------------------------------------");
+
+        int[][] M2 = new int[3][5];
+        int nR2 = 3; 
+        int nC2 = 5;
+
+        azzeraMatrice(M2, nR2, nC2);
+        UtilsMatrice.visualizza(M2);
+
     }
 }
 
