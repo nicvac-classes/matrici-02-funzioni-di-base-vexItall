@@ -20,9 +20,13 @@ class Esercizio {
         assegnaMatrice(M, nR, nC, 0);
     }
 
-    public static void riempiCasuale( /*scrivere qui i parametri richiesti dall'esercizio*/ ) {
+    public static void riempiCasuale(int[][] M, int nR, int nC, int min, int max) {
         Random rand = new Random();
-        //SCRIVERE QUI IL CODICE RICHIESTO DALL'ESERCIZIO
+        for(int i = 0; i < nR; ++i){
+            for(int j = 0; j < nC; ++j){
+                M[i][j] = rand.nextInt(max + 1 - min) + min;
+            }
+        }
     }
 
     public static void main(String args[]) {
